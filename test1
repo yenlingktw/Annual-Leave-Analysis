@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+from array import array
+
+data = pd.read_excel('_Source__.xlsx', index_col=0)
+data['Worker'] = data['First Name']+' '+data['Last Name']                  # Create a column for full name 
+data['Ratio']= (data['Entitlement']-data['Remaining'])/data['Entitlement'] # Calculate Leave Usage Rate
+YOS = pd.cut(data['Years of Service'], 
+             bins=[i for i in range(0,40,5)], 
+             labels=['0-5','6-10','11-15','16-20','21-25','26-30','31-35']) 
+data['YOS']= YOS
+data['Headcount']= 1
+Variable = data.columns.tolist()
+variable_list = ['Ratio','Remaining','Cash-out','Entitlement','Monthly Salary']
+
+print('Column names:')
+print(Variable)
+print()
+print('Sample Data:')
+data.head()
