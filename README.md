@@ -9,3 +9,5 @@ The purpose of this analysis is to analyze which employee segmentation requires 
 
 Data Source:   
 The analysis is to demonstrated how to leverage Python for such issue. Thus, the source file is created based on dummy data.
+
+Medium post: https://medium.com/@yenlingktw/get-to-know-employees-leave-aa366d1e62e8
